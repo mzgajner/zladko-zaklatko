@@ -76,6 +76,7 @@ main {
 .icon {
   font-size: 72px;
   margin-bottom: 1rem;
+  user-select: none;
 }
 
 input {
