@@ -13,7 +13,7 @@ async function attemptDecryption() {
   loading.value = true;
 
   const decryptionAttempts = hints.map((encryptedHint) =>
-    decrypt(encryptedHint, key.value)
+    decrypt(encryptedHint, key.value.toLocaleLowerCase())
   );
   const results = await Promise.all(decryptionAttempts);
   const correctResults = results.filter((result) => result !== false);
