@@ -15,8 +15,8 @@ Follow these steps:
    object where keys are passwords and values are hints:
    ```json
    {
-      "banana": "Banana is the correct answer.",
-      "strawberry": "Yes, excellent, strawberry!"
+     "banana": "Banana is the correct answer.",
+     "strawberry": "Yes, excellent, strawberry!"
    }
    ```
 2. Run `deno task encrypt-hints`, this will create a `hints.json` file with
@@ -24,10 +24,11 @@ Follow these steps:
 3. Run `deno task dev` to start a dev server. Type `banana` into the input field
    and if you did everything correctly, the hint _“Banana is the correct
    answer.”_ should appear.
-4. Run `deno task build` to generate a production-ready site in `/dist` and
-   then deploy it wherever you want.
+4. Run `deno task build` to generate a production-ready site in `/dist` and then
+   deploy it wherever you want.
 
 ## Available tasks
+
 ```sh
 # Start development server
 deno task dev
