@@ -1,6 +1,7 @@
-const buildCommand = new Deno.Command("deno task build", {
+const buildStatus = await Deno.run({
+  cmd: [Deno.execPath(), "task build"],
   stdout: "inherit",
   stderr: "inherit",
-});
+}).status();
 
-console.log(`Build Exit Code: ${buildCommand.outputSync().code}`);
+console.log(`Build Exit Code: ${buildStatus.code}`);
