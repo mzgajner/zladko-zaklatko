@@ -1,4 +1,4 @@
-const buildCommand = new Deno.Command(`${Deno.execPath()} task build`, {
+const buildCommand = new Deno.Command("deno task build", {
   stdout: "inherit",
   stderr: "inherit",
 });
