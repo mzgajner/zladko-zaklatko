@@ -1,5 +1,5 @@
 const buildStatus = await Deno.run({
-  cmd: [Deno.execPath(), "task build"],
+  cmd: [Deno.execPath(), "task -- build"],
   stdout: "inherit",
   stderr: "inherit",
 }).status();
