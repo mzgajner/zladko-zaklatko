@@ -1,36 +1,42 @@
-# Vite + Deno + Vue 3 + TypeScript
+# Zladko Zaklatko
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is a small Vue app that can be used to deliver hints for a treasure hunt or
+escape room. It presents a single input field to the user, expects them to enter
+a password and then displays a hint text if the password matches one of the
+hints. If the password is wrong, it displays a failure message.
 
-## Recommended IDE Setup
+![Screenshot of app UI](/screenshot.png?raw=true)
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+## Setting up
 
-## Type Support For `.vue` Imports in TS
+Follow these steps:
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
+1. Create `plaintext-hints.json` in project root. It should contain a single
+   object where keys are passwords and values are hints:
+   ```json
+   {
+      "banana": "Banana is the correct answer.",
+      "strawberry": "Yes, excellent, strawberry!"
+   }
+   ```
+2. Run `deno task encrypt-hints`, this will create a `hints.json` file with
+   encrypted hints.
+3. Run `deno task dev` to start a dev server. Type `banana` into the input field
+   and if you did everything correctly, the hint _“Banana is the correct
+   answer.”_ should appear.
+4. Run `deno task build` to generate a production-ready site in `/dist` and
+   then deploy it wherever you want.
 
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
+## Available tasks
+```sh
+# Start development server
+deno task dev
 
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+# Generate encrypted `hints.json` file
+deno task encrypt-hints
 
-## Running
-
-You need to have Deno v1.28.0 or later installed to run this repo.
-
-Start a dev server:
-
-```
-$ deno task dev
-```
-
-## Deploy
-
-Build production assets:
-
-```
-$ deno task build
+# Build static assets for deployment in `/dist`
+deno task build
 ```
 
 ## Caveats
