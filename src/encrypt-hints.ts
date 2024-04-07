@@ -1,4 +1,4 @@
-import { existsSync } from 'https://deno.land/std@0.204.0/fs/exists.ts'
+import { existsSync } from 'https://deno.land/std@0.221.0/fs/exists.ts'
 import { encrypt } from './crypto.ts'
 
 const INPUT_PATH = './plaintext-hints.json'
