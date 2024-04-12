@@ -1,7 +1,7 @@
 {
   "name": "Policija",
   "short_name": "Policija",
-  "start_url": "https://zaklad.zgajner.com/",
+  "start_url": "/",
   "display": "fullscreen",
   "background_color": "#6495ED",
   "theme_color": "#6495ED",
@@ -12,5 +12,12 @@
       "sizes": "any",
       "purpose": "maskable"
     }
-  ]
+  ],
+  "screenshots": [{
+    "src": "/screenshot-mobile.png",
+    "sizes": "750x1334",
+    "type": "image/png",
+    "form_factor": "mobile",
+    "label": "Main Chat UI"
+  }]
 }
