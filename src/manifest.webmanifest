@@ -10,6 +10,11 @@
     {
       "src": "/icon.svg",
       "sizes": "any",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
       "purpose": "maskable"
     }
   ],
@@ -17,7 +22,7 @@
     "src": "/screenshot-mobile.png",
     "sizes": "750x1334",
     "type": "image/png",
-    "form_factor": "mobile",
+    "form_factor": "narrow",
     "label": "Main Chat UI"
   }]
 }
