@@ -27,7 +27,7 @@ function sendMessage() {
   </div>
 </template>
 
-<style scoped>
+<style>
 .input {
   flex-basis: 4rem;
   flex-shrink: 0;
@@ -36,6 +36,10 @@ function sendMessage() {
   padding: 1rem;
   line-height: 1.15;
   width: 100%;
+
+  input:focus {
+    outline: 2px solid cornflowerblue;
+  }
 
   input {
     border: none;
@@ -51,10 +55,6 @@ function sendMessage() {
 
     &:placeholder {
       color: #999;
-    }
-
-    &:focus {
-      outline: 2px solid cornflowerblue;
     }
   }
 
