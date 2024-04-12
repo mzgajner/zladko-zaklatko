@@ -53,6 +53,12 @@ function handleSendMessage(message: string) {
   box-sizing: border-box;
 }
 
+html,
+body,
+#app {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
@@ -67,7 +73,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
 }
 
 .messages {
