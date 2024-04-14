@@ -35,7 +35,6 @@ onMounted(() => {
 .messages {
   flex: 1;
   padding: 0 1rem;
-  margin-bottom: 3.5rem;
   background: #F7F7F7;
   flex-shrink: 2;
   overflow-y: auto;
