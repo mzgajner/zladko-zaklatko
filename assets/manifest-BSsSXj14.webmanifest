@@ -1,7 +1,7 @@
 {
   "name": "Policija",
   "short_name": "Policija",
-  "start_url": "/",
+  "start_url": "../",
   "display": "standalone",
   "background_color": "#6495ED",
   "theme_color": "#6495ED",
