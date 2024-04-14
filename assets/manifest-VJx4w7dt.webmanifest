@@ -1,0 +1,30 @@
+{
+  "name": "Policija",
+  "short_name": "Policija",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#6495ED",
+  "theme_color": "#6495ED",
+  "description": "Uradna aplikacija za policijske klepete z najsodobnejšo enkripcijo",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Main Chat UI"
+    }
+  ]
+}
