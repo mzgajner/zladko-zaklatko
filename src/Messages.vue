@@ -1,7 +1,20 @@
 <script lang="ts" setup>
+import { watch, ref, nextTick, onMounted } from 'vue';
 import { messages, Author } from './messages'
 
-defineProps<{ typing: boolean }>()
+const props = defineProps<{ typing: boolean, lastUpdated: Date }>()
+const messageBottom = ref<HTMLElement>()
+
+async function scrollToBottom() {
+  await nextTick()
+  messageBottom.value?.scrollIntoView({ block: "end" })
+}
+
+watch(() => props.lastUpdated, scrollToBottom)
+onMounted(() => {
+  scrollToBottom()
+  window.visualViewport?.addEventListener('resize', scrollToBottom);
+})
 </script>
 
 <template>
@@ -14,12 +27,15 @@ defineProps<{ typing: boolean }>()
       <div class="typing typing-2"></div>
       <div class="typing typing-3"></div>
     </div>
+    <div ref="messageBottom"></div>
   </div>
 </template>
 
 <style scoped>
 .messages {
-  padding: 1rem;
+  flex: 1;
+  padding: 0 1rem;
+  margin-bottom: 3.5rem;
   background: #F7F7F7;
   flex-shrink: 2;
   overflow-y: auto;

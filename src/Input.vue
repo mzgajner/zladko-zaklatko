@@ -29,11 +29,15 @@ function sendMessage() {
 
 <style>
 .input {
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
   flex-basis: 4rem;
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  padding: 1rem;
+  padding: 0.75rem 1rem;
   line-height: 1.15;
   width: 100%;
 

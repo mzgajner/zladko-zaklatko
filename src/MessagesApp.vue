@@ -13,6 +13,7 @@ import {
 } from "./messages";
 
 const typing = ref(false);
+const lastUpdated = ref(new Date());
 
 async function attemptDecryption(message) {
   typing.value = true;
@@ -37,13 +38,14 @@ async function attemptDecryption(message) {
 function handleSendMessage(message: string) {
   addOurMessage(message);
   attemptDecryption(message);
+  lastUpdated.value = new Date();
 }
 </script>
 
 <template>
   <main>
     <Header />
-    <Messages class="messages" :typing="typing" />
+    <Messages :typing="typing" :last-updated="lastUpdated" />
     <Input @send-message="handleSendMessage" :disabled="typing" />
   </main>
 </template>
@@ -75,9 +77,5 @@ main {
   align-items: center;
   justify-content: center;
   height: 100%;
-}
-
-.messages {
-  flex: 1;
 }
 </style>

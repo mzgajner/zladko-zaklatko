@@ -2,7 +2,7 @@
   "name": "Policija",
   "short_name": "Policija",
   "start_url": "/",
-  "display": "standalone",
+  "display": "fullscreen",
   "background_color": "#6495ED",
   "theme_color": "#6495ED",
   "description": "Uradna aplikacija za policijske klepete z najsodobnejšo enkripcijo",
