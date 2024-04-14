@@ -1,21 +1,22 @@
-import { existsSync } from 'https://deno.land/std@0.221.0/fs/exists.ts'
 import { encrypt } from './crypto.ts'
 
 const INPUT_PATH = './plaintext-hints.json'
 const OUTPUT_PATH = './src/hints.json'
 
-if (!existsSync(INPUT_PATH)) {
+const file = Bun.file(INPUT_PATH)
+
+if (!(await file.exists())) {
   console.error(
     `Could not load hints from ${INPUT_PATH}, make sure file exists.`,
   )
-  Deno.exit()
+} else {
+  const plaintextHints = await Bun.file(INPUT_PATH).text()
+  const keyHintMapping = JSON.parse(plaintextHints) as Record<string, string>
+  const encryptedHintPromises = Object.entries(keyHintMapping).map(
+    ([password, hintText]) => encrypt(hintText, password.toLowerCase()),
+  )
+  const encryptedHints = await Promise.all(encryptedHintPromises)
+
+  await Bun.write(OUTPUT_PATH, JSON.stringify(encryptedHints, null, 2))
+  console.log(`Hints encrypted and written to ${OUTPUT_PATH}`)
 }
-
-const plaintextHints = await Deno.readTextFile(INPUT_PATH)
-const keyHintMapping = JSON.parse(plaintextHints) as Record<string, string>
-const encryptedHintPromises = Object.entries(keyHintMapping).map(
-  ([password, hintText]) => encrypt(hintText, password.toLowerCase()),
-)
-const encryptedHints = await Promise.all(encryptedHintPromises)
-
-await Deno.writeTextFile(OUTPUT_PATH, JSON.stringify(encryptedHints, null, 2))

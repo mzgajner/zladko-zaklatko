@@ -1,25 +1,29 @@
 <script lang="ts" setup>
-import { watch, ref, nextTick, onMounted } from 'vue';
+import { watch, ref, nextTick, onMounted } from 'vue'
 import { messages, Author } from './messages'
 
-const props = defineProps<{ typing: boolean, lastUpdated: Date }>()
+const props = defineProps<{ typing: boolean; lastUpdated: Date }>()
 const messageBottom = ref<HTMLElement>()
 
 async function scrollToBottom() {
   await nextTick()
-  messageBottom.value?.scrollIntoView({ block: "end" })
+  messageBottom.value?.scrollIntoView({ block: 'end' })
 }
 
 watch(() => props.lastUpdated, scrollToBottom)
 onMounted(() => {
   scrollToBottom()
-  window.visualViewport?.addEventListener('resize', scrollToBottom);
+  window.visualViewport?.addEventListener('resize', scrollToBottom)
 })
 </script>
 
 <template>
   <div class="messages">
-    <div v-for="message, index in messages" class="message" :class="{ dark: message.author === Author.Us }">
+    <div
+      v-for="message in messages"
+      class="message"
+      :class="{ dark: message.author === Author.Us }"
+    >
       {{ message.text }}
     </div>
     <div class="message" v-if="typing">
@@ -35,10 +39,12 @@ onMounted(() => {
 .messages {
   flex: 1;
   padding: 0 1rem;
-  background: #F7F7F7;
+  background: #f7f7f7;
   flex-shrink: 2;
   overflow-y: auto;
-  box-shadow: inset 0 2rem 2rem -2rem rgba(0, 0, 0, 0.05), inset 0 -2rem 2rem -2rem rgba(0, 0, 0, 0.05);
+  box-shadow:
+    inset 0 2rem 2rem -2rem rgba(0, 0, 0, 0.05),
+    inset 0 -2rem 2rem -2rem rgba(0, 0, 0, 0.05);
   width: 100%;
   white-space: pre-wrap;
 }
@@ -46,12 +52,14 @@ onMounted(() => {
 .messages .message {
   padding: 0.5rem 1rem;
   margin: 1rem 0;
-  background: #FFF;
+  background: #fff;
   border-radius: 1.125rem 1.125rem 1.125rem 0;
   min-height: 2.25rem;
   width: fit-content;
   max-width: 66%;
-  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.075), 0rem 1rem 1rem -1rem rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 0 2rem rgba(0, 0, 0, 0.075),
+    0rem 1rem 1rem -1rem rgba(0, 0, 0, 0.1);
   line-height: 1.5em;
 }
 
@@ -84,7 +92,6 @@ onMounted(() => {
 }
 
 @keyframes typing {
-
   0%,
   75%,
   100% {

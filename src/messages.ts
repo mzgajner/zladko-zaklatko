@@ -8,13 +8,16 @@ type Message = {
   text: string
 }
 
-const DEFAULT_MESSAGES = [{
-  author: Author.Them,
-  text: 'Čao, šefica 👋',
-}, {
-  author: Author.Them,
-  text: 'Javi, če boš kaj rabla',
-}]
+const DEFAULT_MESSAGES = [
+  {
+    author: Author.Them,
+    text: 'Čao, šefica 👋',
+  },
+  {
+    author: Author.Them,
+    text: 'Javi, če boš kaj rabla',
+  },
+]
 
 const wrongTexts = [
   'Ne štekam...',

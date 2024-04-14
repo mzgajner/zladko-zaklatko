@@ -2,12 +2,8 @@
   <div class="contact bar">
     <img class="pic" src="./avatar.jpg" />
     <div class="description">
-      <div class="name">
-        Boštjan Policajšek
-      </div>
-      <div class="subtitle">
-        Oddelek za krvne in seksualne delikte
-      </div>
+      <div class="name">Boštjan Policajšek</div>
+      <div class="subtitle">Oddelek za krvne in seksualne delikte</div>
     </div>
   </div>
 </template>

@@ -1,37 +1,37 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref } from 'vue'
 
-import { decrypt } from "./crypto";
-import hints from "./hints.json";
+import { decrypt } from './crypto'
+import hints from './hints.json'
 
-const key = ref("");
-const outputData = ref("");
-const loading = ref(false);
+const key = ref('')
+const outputData = ref('')
+const loading = ref(false)
 
 async function attemptDecryption() {
-  if (key.value.length === 0) return;
-  loading.value = true;
+  if (key.value.length === 0) return
+  loading.value = true
 
   const decryptionAttempts = hints.map((encryptedHint) =>
-    decrypt(encryptedHint, key.value.toLocaleLowerCase())
-  );
-  const results = await Promise.all(decryptionAttempts);
-  const correctResults = results.filter((result) => result !== false);
-  key.value = "";
+    decrypt(encryptedHint, key.value.toLocaleLowerCase()),
+  )
+  const results = await Promise.all(decryptionAttempts)
+  const correctResults = results.filter((result) => result !== false)
+  key.value = ''
 
-  await new Promise((resolve) => window.setTimeout(resolve, 5000));
+  await new Promise((resolve) => window.setTimeout(resolve, 5000))
 
-  loading.value = false;
+  loading.value = false
 
   if (correctResults.length === 0) {
-    outputData.value = "Ključ žal ni pravilen 😞.";
+    outputData.value = 'Ključ žal ni pravilen 😞.'
   } else {
-    outputData.value = correctResults[0].toString();
+    outputData.value = correctResults[0].toString()
   }
 }
 
 function reset() {
-  outputData.value = "";
+  outputData.value = ''
 }
 </script>
 
