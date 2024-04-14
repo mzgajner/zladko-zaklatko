@@ -24,7 +24,7 @@ async function attemptDecryption(message) {
   const results = await Promise.all(decryptionAttempts);
   const correctResults = results.filter((result) => result !== false);
 
-  await new Promise((resolve) => window.setTimeout(resolve, 200));
+  await new Promise((resolve) => window.setTimeout(resolve, 5000));
 
   typing.value = false;
 

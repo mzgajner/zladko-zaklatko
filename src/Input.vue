@@ -30,9 +30,6 @@ function sendMessage() {
 <style>
 .input {
   background-color: white;
-  /* position: fixed;
-  bottom: 0;
-  left: 0; */
   flex-basis: 4rem;
   flex-shrink: 0;
   display: flex;
