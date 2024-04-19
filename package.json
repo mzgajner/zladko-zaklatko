@@ -1,5 +1,5 @@
 {
-  "name": "zladko-zaklatko-bun",
+  "name": "zladko-zaklatko",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,14 +11,14 @@
     "format": "bunx prettier . --write"
   },
   "dependencies": {
-    "vue": "^3.4.21"
+    "vue": "^3.4.23"
   },
   "devDependencies": {
-    "@types/bun": "^1.0.12",
+    "@types/bun": "^1.1.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "prettier": "^3.2.5",
     "typescript": "^5.4.5",
-    "vite": "^5.2.8",
+    "vite": "^5.2.9",
     "vue-tsc": "^2.0.13"
   },
   "prettier": {
