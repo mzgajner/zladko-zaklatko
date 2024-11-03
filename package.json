@@ -1,7 +1,7 @@
 {
   "name": "zladko-zaklatko",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "bunx vite",
@@ -11,15 +11,15 @@
     "format": "bunx prettier . --write"
   },
   "dependencies": {
-    "vue": "^3.4.23"
+    "vue": "^3.5.12"
   },
   "devDependencies": {
-    "@types/bun": "^1.1.0",
-    "@vitejs/plugin-vue": "^5.0.4",
-    "prettier": "^3.2.5",
-    "typescript": "^5.4.5",
-    "vite": "^5.2.9",
-    "vue-tsc": "^2.0.13"
+    "@types/bun": "^1.1.13",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10",
+    "vue-tsc": "^2.1.10"
   },
   "prettier": {
     "semi": false,
