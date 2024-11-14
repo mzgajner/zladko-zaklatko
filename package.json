@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "bunx vite",
+    "dev": "bunx vite --open",
     "build": "bunx vue-tsc && bunx vite build",
     "preview": "bunx vite preview",
     "encrypt-hints": "bun src/encrypt-hints.ts",
